@@ -1,0 +1,32 @@
+# Array of prefixes to run against.
+#
+# Examples:
+# - beta
+# - b1
+# - b2
+# - qa
+# - q1
+# - q2
+prefixes:
+- beta
+
+# Site base URLs:
+sites:
+- amoebadb.org
+# - clinepidb.org
+- cryptodb.org
+- fungidb.org
+- giardiadb.org
+- hostdb.org
+- microbiomedb.org
+- microsporidiadb.org
+- orthomcl.org
+- piroplasmadb.org
+- plasmodb.org
+# - restricted.clinepidb.org
+- schistodb.net
+- toxodb.org
+- trichdb.org
+- tritrypdb.org
+- vectorbase.org
+- veupathdb.org

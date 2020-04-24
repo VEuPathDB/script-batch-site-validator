@@ -45,7 +45,12 @@ func main() {
 
 	for _, site := range config.Sites {
 		for _, prefix := range config.Prefixes {
-			path := prefix + "." + site
+			var path string
+			if prefix == "" {
+				path = site
+			} else {
+				path = prefix + "." + site
+			}
 			fmt.Printf(testBlock, path)
 
 			runCmd("./param.sh", path, auth)

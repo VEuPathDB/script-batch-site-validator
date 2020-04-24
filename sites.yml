@@ -1,5 +1,8 @@
 # Array of prefixes to run against.
 #
+# To run against a production site, add the value use an
+# empty entry (- "").
+#
 # Examples:
 # - beta
 # - b1

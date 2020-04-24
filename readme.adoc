@@ -1,0 +1,10 @@
+= Batch Site Validator
+
+Runs a set of tests against multiple configurable sites.
+
+== Usage
+
+. Edit the `sites.yml` file with the domains and subdomains the script should
+  run against.
+. Run either `./batch-linux` or `./batch-mac` depending on your os.
+. Optionally provide a QA Auth token using the `--auth` flag.

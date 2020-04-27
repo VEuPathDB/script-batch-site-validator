@@ -6,5 +6,11 @@ Runs a set of tests against multiple configurable sites.
 
 . Edit the `sites.yml` file with the domains and subdomains the script should
   run against.
-. Run either `./batch-linux` or `./batch-mac` depending on your os.
+. Run either `./batch-linux` or `./batch-mac` depending on your OS.
 . Optionally provide a QA Auth token using the `--auth` flag.
+
+.Example
+[source, shell-session]
+----
+$ ./batch-linux plasmodb.org
+----

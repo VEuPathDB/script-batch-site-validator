@@ -16,17 +16,17 @@ prefixes:
 # Site base URLs:
 sites:
 - amoebadb.org
-# - clinepidb.org
+#- clinepidb.org
 - cryptodb.org
 - fungidb.org
 - giardiadb.org
 - hostdb.org
-- microbiomedb.org
+#- microbiomedb.org
 - microsporidiadb.org
-- orthomcl.org
+#- orthomcl.org
 - piroplasmadb.org
 - plasmodb.org
-# - restricted.clinepidb.org
+#- restricted.clinepidb.org
 - schistodb.net
 - toxodb.org
 - trichdb.org

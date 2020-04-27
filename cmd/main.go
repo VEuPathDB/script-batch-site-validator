@@ -15,6 +15,7 @@ const (
 	authHelp = "QA Authorization token, used for running against QA sites from" +
 		" your local machine.  For further details see the help output from " +
 		"param.sh or pub-strat.sh"
+	vHelp = "enable debug level logging"
 	testBlock = `
 ==================================================
 
@@ -27,10 +28,12 @@ const (
 
 func main() {
 	var auth string
+	var verb bool
 
 	cli.NewCommand().
 		Description(help).
 		Flag(cli.LFlag("auth", authHelp).Bind(&auth, true)).
+		Flag(cli.SFlag('v', vHelp).Bind(&verb, true)).
 		MustParse()
 
 	raw, err := ioutil.ReadFile("./sites.yml")
@@ -53,8 +56,8 @@ func main() {
 			}
 			fmt.Printf(testBlock, path)
 
-			runCmd("./param.sh", path, auth)
-			runCmd("./pub-strat.sh", path, auth)
+			runCmd("./param.sh", path, auth, verb)
+			runCmd("./pub-strat.sh", path, auth, verb)
 		}
 	}
 }
@@ -64,13 +67,16 @@ type Config struct {
 	Sites    []string `yaml:"sites"`
 }
 
-func runCmd(com, site, auth string) {
+func runCmd(com, site, auth string, verb bool) {
 	cmd := exec.Command(com, "--summary=yaml")
 
 	if len(auth) > 0 {
 		cmd.Args = append(cmd.Args, "--auth="+auth)
 	}
 
+	if verb {
+		cmd.Args = append(cmd.Args, "-v")
+	}
 	cmd.Args = append(cmd.Args, site)
 
 	cmd.Stdout = os.Stdout
